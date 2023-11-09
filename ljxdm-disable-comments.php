@@ -14,11 +14,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die();
 }
 
-define( 'LJXDM_DISABLE_COMMENTS_VERSION', '1.0.1' );
+define( 'LJXDM_DISABLE_COMMENTS_VERSION', '1.0.2' );
 
 class LJXDM_Disable_Comments {
 
-	private static $instance;
 	protected $plugin_file;
 	protected $plugin_basename;
 
@@ -47,9 +46,7 @@ class LJXDM_Disable_Comments {
 	}
 
 	public function remove_post_types_support() {
-
 		$post_types = get_post_types();
-
 		foreach ( $post_types as $post_type ) {
 			if ( post_type_supports( $post_type, 'comments' ) ) {
 				remove_post_type_support( $post_type, 'comments' );
@@ -63,9 +60,7 @@ class LJXDM_Disable_Comments {
 	}
 
 	public function redirect_admin_menu() {
-
 		global $pagenow;
-
 		if ( 'edit-comments.php' === $pagenow ) {
 			wp_safe_redirect( admin_url() );
 			exit();
@@ -73,19 +68,15 @@ class LJXDM_Disable_Comments {
 	}
 
 	public function remove_meta_box() {
-
 		remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );
 	}
 
 	public function remove_admin_bar_menu() {
-
 		global $wp_admin_bar;
-
 		$wp_admin_bar->remove_menu( 'comments' );
 	}
 
 	public function disable_post_pre_comment() {
-
 		wp_die( 'No comments' );
 	}
 }
