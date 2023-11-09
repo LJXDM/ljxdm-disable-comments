@@ -4,7 +4,7 @@
  * Description: Simply disables comments. No marketing, no invasive menus, no hassle.
  * Author: ljxdm
  * Author URI: https://ljx.uk
- * Version: 1.0.1
+ * Version: 1.0.2
  * Plugin Slug: ljxdm-disable-comments
  * License: GPLv3 or later
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
