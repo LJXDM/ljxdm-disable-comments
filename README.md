@@ -1,4 +1,4 @@
 
-# Disable Comments
+# Simple Disable Comments
 
-Wordpress plugin that removes/disables all comments and trackback features.
+Simply disables Wordpress comments. No marketing, no invasive menus, no hassle.
